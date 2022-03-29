@@ -15,13 +15,16 @@ private:
 	int length{};
 
 public:
-	Password() : generated{ "" }, lowerCase{ "abcdefghijklmnopqrstuvwxyz" }, upperCase{ "ABCDEFGHIJKLMNOPQRSTUVWXYZ" }, numbers{ "0123456789" }
+	Password() : generated{""}, lowerCase{"abcdefghijklmnopqrstuvwxyz"}, upperCase{"ABCDEFGHIJKLMNOPQRSTUVWXYZ"},
+	             numbers{"0123456789"}
 	{
 	}
 
 	int getLowerCase(int i) { return lowerCase[i]; }
 
 	int getUpperCase(int i) { return upperCase[i]; }
+
+	std::string getGenerated() { return generated; }
 
 	void assignLength(int leng)
 	{
@@ -62,16 +65,16 @@ public:
 		}
 	}
 
-	void print()
+	void print(std::string hm)
 	{
-		std::cout << generated << std::endl;
+		std::cout << hm << std::endl;
 	}
 
 	friend int getRandomNumber(int min, int max);
 
 };
 
-int getRandomNumber(int min, int max)
+int getRandomNumber(const int min, const int max)
 {
 	std::mt19937 mt{ static_cast<unsigned int>(
 		std::chrono::steady_clock::now().time_since_epoch().count()
@@ -101,7 +104,7 @@ int main()
 	password.generateGuide();
 	password.generateRandom();
 
-	password.print();
+	password.print(password.getGenerated());
 
 	return 0;
 }
