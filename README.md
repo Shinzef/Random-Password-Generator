@@ -1,4 +1,4 @@
-###### **Random Password Generator**
+**Random Password Generator**
 
 <sub>made by Shinzef</sub>
 
