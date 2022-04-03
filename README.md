@@ -13,6 +13,8 @@ features:
 - able to make password
   
 - not useless stuff
+
+- it has options now
   
 
 Thats all !
